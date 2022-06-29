@@ -1,10 +1,13 @@
 # TestTestbin
 
 install dependencies 
-npm i 
+---npm i 
 
 run on developement 
-npm run dev
+---npm run dev
 
 on production
-npm start
+---npm start
+
+#default Port 
+5000
