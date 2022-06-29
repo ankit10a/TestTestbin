@@ -9,7 +9,8 @@ const todoTaskSchema = new mongoose.Schema({
             default: Date.now
         },
         complete:{
-            type: Boolean
+            type: Boolean,
+            default: false
         },
         userId: {
             ref:"userId",
