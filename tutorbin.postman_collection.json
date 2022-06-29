@@ -1,0 +1,987 @@
+{
+	"info": {
+		"_postman_id": "439afe14-5b90-46a5-a467-83c67c386282",
+		"name": "tutorbin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"abc@mail.com\",\r\n    \"password\":\"Test@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"abc@mail.com\",\r\n    \"password\":\"Test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "262"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"106-K+mkplxEaGEatTRYg2/8tT9/+cw\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jun 2022 20:04:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"msg\": \"successfully login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2MmJiNDNhYTFmNDJmNWE4NDgwYmU4YzkiLCJpYXQiOjE2NTY0NDY2OTQsImV4cCI6MTY1NzE2NjY5NH0.MmhAyk2Z7Wd0ORBWPxeQ09FbS8LTxQTyqdjLlxCP0jo\",\n    \"userid\": \"62bb43aa1f42f5a8480be8c9\"\n}"
+				}
+			]
+		},
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"abc@mail.com\",\r\n    \"password\": \"Test@123\",\r\n    \"firstName\":\"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/auth/signup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "signUp",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"abc@mail.com\",\r\n    \"password\": \"Test@123\",\r\n    \"firstName\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-tLVn96mT3E8NzYWTRSOHEF0bmw0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 28 Jun 2022 19:59:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"msg\": \"User is already Exist\"\n}"
+				}
+			]
+		},
+		{
+			"name": "taskCreate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"MaxListenersExceededWarning: Possible EventEmitter memory leak detected. \",\r\n    \"complete\": false,\r\n    \"userId\":\"62bb43aa1f42f5a8480be8c9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/task/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "taskCreate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"MaxListenersExceededWarning: Possible EventEmitter memory leak detected. \",\r\n    \"complete\": false,\r\n    \"userId\":\"62bb43aa1f42f5a8480be8c9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/task/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e2-UGQBTXt09CedHFJiMS2JFKaB6xw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:22:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"content\": \"MaxListenersExceededWarning: Possible EventEmitter memory leak detected. \",\n        \"complete\": false,\n        \"userId\": \"62bb43aa1f42f5a8480be8c9\",\n        \"_id\": \"62bbef8db0f17b8ad6d765db\",\n        \"date\": \"2022-06-29T06:22:05.706Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "updateTask",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"Max Possible EventEmitter memory leak detected. \",\r\n    \"complete\": false,\r\n    \"id\":\"62bbf3026a96b0be403581f3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/task/updateTask",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"updateTask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateTask",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"Max Possible EventEmitter memory leak detected. \",\r\n    \"complete\": false,\r\n    \"id\":\"62bbf3026a96b0be403581f3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/task/updateTask",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"updateTask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-WBLH0W2w1s6JS0w5CtWQWoTESQs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:46:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"successfully Deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getProfile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v1/auth/getprofile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"getprofile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getProfile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/v1/auth/getprofile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"getprofile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2-X+3TuUWdB5PFbht8pX6FNkQccCk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:03:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"profile_data\": {\n        \"_id\": \"62bb43aa1f42f5a8480be8c9\",\n        \"firstName\": \"Test\",\n        \"email\": \"abc@mail.com\",\n        \"createdAt\": \"2022-06-28T18:06:37.421Z\",\n        \"__v\": 0,\n        \"lastName\": \"demo\",\n        \"userName\": \"abc123\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "getuserTasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/v1/task/getuserTasks",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"getuserTasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getuserTasks",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/v1/task/getuserTasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"getuserTasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e2-YI3dEzsdQemwaqH5IGMVnw0ymYE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:18:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"_id\": \"62bb4daf88522ca8cf871dd7\",\n            \"content\": \"MaxListenersExceededWarning: Possible EventEmitter memory leak detected. \",\n            \"complete\": false,\n            \"userId\": \"62bb43aa1f42f5a8480be8c9\",\n            \"date\": \"2022-06-28T18:51:27.364Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "getDeleteId",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/task/deleteById/62bb4daf88522ca8cf871dd7",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"deleteById",
+						"62bb4daf88522ca8cf871dd7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getDeleteId",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/task/deleteById/62bb4daf88522ca8cf871dd7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"deleteById",
+								"62bb4daf88522ca8cf871dd7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-WBLH0W2w1s6JS0w5CtWQWoTESQs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:37:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"successfully Deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteAllUserTask",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/task/deleteAllUserTask",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"deleteAllUserTask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deleteAllUserTask",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/task/deleteAllUserTask",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"deleteAllUserTask"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-WBLH0W2w1s6JS0w5CtWQWoTESQs\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:40:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"successfully Deleted\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getTaskbyId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/task/getTaskById/62bbef8db0f17b8ad6d765db",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"getTaskById",
+						"62bbef8db0f17b8ad6d765db"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getTaskbyId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/task/getTaskById/62bbef8db0f17b8ad6d765db",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"task",
+								"getTaskById",
+								"62bbef8db0f17b8ad6d765db"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e0-Ol3f5LjYAqkyWnso4zZJG21x3ac\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:29:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"_id\": \"62bbef8db0f17b8ad6d765db\",\n        \"content\": \"MaxListenersExceededWarning: Possible EventEmitter memory leak detected. \",\n        \"complete\": false,\n        \"userId\": \"62bb43aa1f42f5a8480be8c9\",\n        \"date\": \"2022-06-29T06:22:05.706Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "updateProfile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "{{Token}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Test\",\r\n    \"lastName\":\"Demo\",\r\n    \"userName\":\"abc123\",\r\n    \"email\":\"abc@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/auth/updateProfile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"auth",
+						"updateProfile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateProfile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Test\",\r\n    \"lastName\":\"Demo\",\r\n    \"userName\":\"abc123\",\r\n    \"email\":\"abc@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v1/auth/updateProfile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"updateProfile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-QMpG6TQcuNSvsw27V7yVGOqxrb0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 29 Jun 2022 06:07:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"msg\": \"Profile is updated\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000/api/",
+			"type": "default"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI2MmJiNDNhYTFmNDJmNWE4NDgwYmU4YzkiLCJpYXQiOjE2NTY0NDY2OTQsImV4cCI6MTY1NzE2NjY5NH0.MmhAyk2Z7Wd0ORBWPxeQ09FbS8LTxQTyqdjLlxCP0jo"
+		}
+	]
+}
